@@ -1,0 +1,39 @@
+{
+    "common":{
+       
+    },
+    "listTab": {
+        "us":"美股",
+        "hs":"A股",
+        "hk":"港股"
+    },
+    "hkList":{
+        "apply":"今日認購",
+        "name":"股票名稱",
+        "code":"股票代碼",
+        "price":"申購價格",
+        "fee":"入場費",
+        "date":"結果公布日期",
+        "syts":"剩餘天數",
+        "prospectus":"招股書",
+        "endLine":"認購截止還剩",
+        "endLineDay":"天",
+        "ckqw":"查看全文",
+        "toBeListed":"待上市",
+        "lot":"每手股數",
+        "listed":"已上市",
+        "xj":"按盘价",
+        "zdf":"累計升跌幅",
+        "listedDate":"上市日期",
+        "toApply":"申購",
+        "psjg":"配售結果",
+        "nopsjg":"暫無配售結果",
+        "anPan":"暗盤",
+        "zgj":"招股價",
+        "cerg":"超額認購",
+        "apsdf":"暗盤升跌幅",
+        "zrsdf":"昨日升跌幅",
+        "hy":"行業",
+        "noData":"暫無數據~"
+    }
+}

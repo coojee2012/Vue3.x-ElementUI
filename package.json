@@ -1,0 +1,41 @@
+{
+  "name": "jyb-ipo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "npm run ele-et && vue-cli-service serve",
+    "build": "npm run ele-et && vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
+    "ele-light": "et -c ./src/assets/scss/theme/ele-var-light.scss -o ./src/assets/scss/theme/light",
+    "ele-dark": "et -c ./src/assets/scss/theme/ele-var-dark.scss -o ./src/assets/scss/theme/dark",
+    "ele-et": "npm run ele-light && npm run ele-dark"
+  },
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "rxjs": "^6.3.3",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.0.2",
+    "vue-i18n": "^8.0.0",
+    "vue-property-decorator": "^8.1.0",
+    "vue-router": "^3.0.3",
+    "vue-rx": "^6.0.1",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@kazupon/vue-i18n-loader": "^0.3.0",
+    "@types/webpack": "^4.4.0",
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-typescript": "^3.8.0",
+    "@vue/cli-service": "^3.8.0",
+    "element-theme-chalk": "^2.9.1",
+    "element-ui": "^2.9.1",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.1.0",
+    "typescript": "^3.4.3",
+    "vue-cli-plugin-element": "^1.0.1",
+    "vue-cli-plugin-i18n": "^0.6.0",
+    "vue-cli-plugin-rx": "^0.1.5",
+    "vue-template-compiler": "^2.6.10"
+  }
+}

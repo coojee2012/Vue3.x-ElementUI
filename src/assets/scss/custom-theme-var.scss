@@ -1,0 +1,196 @@
+///////////////////////////////////自定义全局变量
+// 浅色主题
+$light-theme: (
+  border-color: #eceeef,
+  font-color:#323232,
+  font-secondary: #c2c6d0,
+  background-color:#fff,
+  bg-title:#d3e6fb,
+  bg-oddList:#f3f3f3,
+  bg-listHover:#c5dffe
+);
+
+//深色主题
+$dark-theme: (
+  border-color: #000,
+  font-color:#c2c6d0,
+  font-secondary: #aaa,
+  background-color:#131925,
+  bg-title:#293248,
+  bg-oddList:#171e2c,
+  bg-listHover:#0d3a70
+
+  
+);
+
+//定义映射集合
+$themes: (
+  light: $light-theme,
+  dark: $dark-theme
+);
+
+
+//******************************公共变量
+//字体定义规范
+$font_12:.12rem;
+$font_14:.14rem;
+$font_16:.16rem;
+$font_18:.18rem;
+$font_20:.20rem;
+
+//颜色定义规范
+$tab1-text:#c2c6d0;
+$tab1-bg:#222939;
+$tab1-bg-active:#113d73;
+$color-active:#277ce1;
+$color-white:#fff;
+$color-black:#000;
+$color-danger:#ff0000;
+$color-reds:#d13629;
+$color-greens:#07aa3f;
+$color-notice:#E98A29;
+
+
+$text-grey:#9c9a9a;
+// $font-color-theme : #3f8e4d;//字体主题颜色默认
+// $font-color-theme1 : red;//字体主题颜色1
+// $font-color-theme2 : #652BF5;//字体主题颜色2
+// $font-color-theme3 : deepskyblue;//字体主题颜色3
+// $font-color-themesec : #edc148;//字体次要主题颜色
+
+
+
+
+
+
+//颜色定义规范
+// $background-color-theme: #3f8e4d;//背景主题颜色默认
+// $background-color-theme1: red;//背景主题颜色1
+// $background-color-theme2: #652BF5;//背景主题颜色2
+// $background-color-theme3: deepskyblue;//背景主题颜色3
+// $background-color-themesec: #edc148;//背景次要主题颜色
+ 
+// $font-color-theme : #3f8e4d;//字体主题颜色默认
+// $font-color-theme1 : red;//字体主题颜色1
+// $font-color-theme2 : #652BF5;//字体主题颜色2
+// $font-color-theme3 : deepskyblue;//字体主题颜色3
+// $font-color-themesec : #edc148;//字体次要主题颜色
+ 
+// $font-color-shallow0 : #000;
+// $font-color-shallow1 : #111;
+// $font-color-shallow2 : #222;
+// $font-color-shallow3 : #333;
+// $font-color-shallow4 : #444;
+// $font-color-shallow5 : #555;
+// $font-color-shallow6 : #666;
+// $font-color-shallow7 : #777;
+// $font-color-shallow8 : #888;
+// $font-color-shallow9 : #999;
+// $font-color-shallowdb : #dbdbdb;
+
+//////////////////mixin
+
+@mixin themify($themes: $themes) {
+  @each $theme-name, $map in $themes {
+ 
+    .theme-#{$theme-name} & {
+      $theme-map: () !global;
+      @each $key, $value in $map {
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+ 
+      @content;
+ 
+      $theme-map: null !global;
+    }
+  }
+}
+ 
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+
+
+
+
+
+
+// /*px转rem*/
+// @mixin px2rem($property,$px,$px2:false,$px3:false,$px4:false){
+// 	$rem:75px;/* 设计稿尺寸/10 */
+//   @if $px and $px2 and $px3 and $px4 {
+//     #{$property}: ($px / $rem) + rem ($px2 / $rem) + rem ($px3 / $rem) + rem ($px4 / $rem) + rem;
+//   }
+//   @else if $px and $px2 {
+// 		#{$property}: ($px / $rem) + rem ($px2 / $rem) + rem;
+// 		//[data-model='pad'] & {#{$property}: ($px * 1.4 / $rem) + rem ($px2 * 1.4 / $rem) + rem;}
+// 	}
+// 	@else{
+// 		#{$property}: ($px / $rem) + rem!important;
+// 		//[data-model='pad'] & {#{$property}: ($px * 1.4 / $rem) + rem;}
+// 	}
+// }
+ 
+// /*根据dpr计算font-size*/
+// @mixin font-dpr($font-size){
+// 	font-size: $font-size;
+// 	//[data-model="pad"] & { font-size: $font-size * 1.4; }
+// 	[data-dpr="2"] & { font-size: $font-size * 2;}
+// 	[data-dpr="3"] & { font-size: $font-size * 3;}
+// }
+ 
+// /*弹性盒属性*/
+// %flexbox{
+// 	display: inline-flex;display: -webkit-flex;display: flex;
+// }
+// /*弹性盒比例*/
+// @mixin flex($num:1){
+// 	-webkit-box-flex:$num;-moz-box-flex:$num;-webkit-flex:$num;-ms-flex:$num;flex:$num;
+// }
+// /*超行溢出显示省略号*/
+// @mixin overflow($num:1,$fontSize:0,$lineHeight:1.5){
+//   display: -webkit-box;-webkit-line-clamp:$num; overflow: hidden;
+//   /*! autoprefixer: off */
+//   -webkit-box-orient: vertical;
+//   /* autoprefixer: on */
+//   @if $fontSize!=0 and $lineHeight{/*高度需要撑开*/
+//     line-height:$lineHeight;
+//     @if $lineHeight < 1.2 {
+//       line-height:1.2; /*最小需要1.2，否则在部分安卓机下第$num+1行会顶部漏出*/
+//     }
+//     height: $num * $fontSize * $lineHeight;
+//     [data-dpr="2"] & { height: $num * $fontSize * $lineHeight * 2!important;}
+//     [data-dpr="3"] & { height: $num * $fontSize * $lineHeight * 3!important;}
+//   }
+// }
+ 
+// //transition兼容写法
+// @mixin transition($content:all .2s){
+//   -moz-transition: $content;
+//   -webkit-transition: $content;
+//   -o-transition: $content;
+//   transition: $content;
+// }
+// //transfrom兼容
+// @mixin translateX($num:-50%){
+//   -ms-transform: translateX($num);
+//   -moz-transform: translateX($num);
+//   -webkit-transform: translateX($num);
+//   -o-transform: translateX($num);
+//   transform: translateX($num);
+// }
+// @mixin translateY($num:-50%){
+//   -ms-transform: translateY($num);
+//   -moz-transform: translateY($num);
+//   -webkit-transform: translateY($num);
+//   -o-transform: translateY($num);
+//   transform: translateY($num);
+// }
+// @mixin rotate($deg:90deg){
+//   -ms-transform:rotate($deg);
+//   -moz-transform:rotate($deg);
+//   -webkit-transform:rotate($deg);
+//   -o-transform:rotate($deg);
+//   transform:rotate($deg);
+// }

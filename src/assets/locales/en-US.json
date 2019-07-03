@@ -1,0 +1,39 @@
+{
+    "common":{
+        
+    },
+    "listTab": {
+        "us":"Ameirca",
+        "hs":"China",
+        "hk":"Hong Kong"
+    },
+    "hkList":{
+        "apply":"Apply",
+        "name":"Name",
+        "code":"Symbol",
+        "price":"Price",
+        "fee":"Entrance fee",
+        "date":"Result release date",
+        "syts":"Days Remaining",
+        "prospectus":"Prospectus",
+        "endLine":"Remaining",
+        "endLineDay":"Days",
+        "ckqw":"Details",
+        "toBeListed":"To be listed",
+        "lot":"Lots",
+        "listed":"Listed",
+        "xj":"Last",
+        "zdf":"Cumulative Chg.%",
+        "listedDate":"Listing date",
+        "toApply":"Apply",
+        "psjg":"Distribution results",
+        "nopsjg":"No result of allotment",
+        "anPan":"Dark pools",
+        "zgj":"Issue price",
+        "cerg":"Oversubscribed",
+        "apsdf":"Dark pools Chg.%",
+        "zrsdf":"Yesterday Chg.%",
+        "hy":"Industry",
+        "noData":"No data~"
+    }
+}
